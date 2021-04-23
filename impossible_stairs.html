@@ -1,0 +1,215 @@
+<html>
+
+<style>
+.riser
+{
+fill: url(#linearGradient3);
+stroke: #0a5c84;
+stroke-width:2;
+}
+
+.back_riser
+{
+fill: black;
+//stroke: black;
+//stroke-width:2;
+}
+
+.landing
+{
+fill: url(#radianGradient1);
+stroke: #0a5c84;
+stroke-width:2;
+}
+
+.tread
+{
+fill: url(#linearGradient1);
+//stroke: #0a5c84;
+//stroke-width:2;
+}
+
+.back_tread
+{
+fill: url(#linearGradient2);
+//stroke: #0a5c84;
+//stroke-width:2;
+}
+
+.sphere
+{
+fill: url(#sphereRadialGradient);
+}
+</style>
+
+<svg id="rt" viewbox="0 0 3000 1200">
+
+	<!-- define graphics -->
+	<defs>
+	
+	<!-- filters -->
+	    <linearGradient id="linearGradient1" x1="0%" y1="0%" x2="75%" y2="75%">
+			<stop
+				style="stop-color:#000000;stop-opacity:1.0000000"
+				offset="0.00000000" />
+			<stop
+				style="stop-color:#66CCFF;stop-opacity:1.0000000"
+				offset="1.0000000" />
+		</linearGradient>
+	
+	    <linearGradient id="linearGradient2" x1="0%" y1="0%" x2="90%" y2="90%">
+			<stop
+				style="stop-color:#66CCFF;stop-opacity:1.0000000"
+				offset="0.00000000" />
+			<stop
+				style="stop-color:#000000;stop-opacity:1.0000000"
+				offset="1.0000000" />
+		</linearGradient>
+		
+		<linearGradient id="linearGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop
+				style="stop-color:#0a5c84;stop-opacity:1.0000000"
+				offset="0.00000000" />
+			<stop
+				style="stop-color:#000000;stop-opacity:1.0000000"
+				offset="1.0000000" />
+		</linearGradient>
+		
+		<radialGradient id="radianGradient1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+			<stop 
+				offset="0%" style="stop-color:#66CCFF;stop-opacity:1" />
+			<stop 
+				offset="100%" style="stop-color:#0a5c84;stop-opacity:1" />
+		</radialGradient>
+		
+		
+		<radialGradient id="sphereRadialGradient" cx="50%" cy="50%" r="90%" fx="50%" fy="50%">
+			<stop 
+				offset="0%" style="stop-color:red;stop-opacity:1" />
+			<stop 
+				offset="100%" style="stop-color:#000000;stop-opacity:1" />
+		</radialGradient>
+
+		<!-- staircase primitives -->
+		<path id="tread" d="M100,0 l-100,50 l100,50 l100,-50 Z" class="tread" />
+		<path id="backTread" d="M100,0 l-100,50 l100,50 l100,-50 Z" class="back_tread" />
+		<path id="riser" d="M200,75 l-100,50 l0,-25 l100,-50 Z" class="riser" />
+		<path id="backRiser" d="M200,75 l-100,50 l0,-25 l100,-50 Z" class="back_riser" />		
+		<path id="landing" d="M200,0 l-200,100 l200,100 l200,-100 Z" class="landing" />
+
+
+		<g id="frontStep">
+			<use xlink:href="#tread" />
+			<use xlink:href="#riser" />
+		</g>
+
+		<g id="frontStairs">		
+			<use xlink:href="#riser"/>
+			<use xlink:href="#frontStep" transform="translate(100, 75)" />
+			<use xlink:href="#frontStep" transform="translate(200, 150)" />
+			<use xlink:href="#frontStep" transform="translate(300, 225)" />
+			<use xlink:href="#frontStep" transform="translate(400, 300)" />
+		</g>
+		
+		<g id="backStep">
+			<use xlink:href="#backRiser" />
+			<use xlink:href="#backTread" transform="translate(100,50)"/>
+		</g>		
+		
+		<g id="backStairs">
+			<use xlink:href="#backStep" />
+			<use xlink:href="#backStep" transform="translate(100, 25)" />
+			<use xlink:href="#backStep" transform="translate(200, 50)" />
+			<use xlink:href="#backStep" transform="translate(300, 75)" />
+			<use xlink:href="#backStep" transform="translate(400, 100)" />		
+			<use xlink:href="#backStep" transform="translate(500, 125)" />
+			<use xlink:href="#backStep" transform="translate(600, 150)" />
+			<use xlink:href="#backStep" transform="translate(700, 175)" />
+			<use xlink:href="#backStep" transform="translate(800, 200)" />
+			<use xlink:href="#backStep" transform="translate(900, 225)" />
+			<use xlink:href="#backStep" transform="translate(1000, 250)" />
+			<use xlink:href="#backStep" transform="translate(1100, 275)" />
+			<use xlink:href="#backStep" transform="translate(1200, 300)" />
+			<use xlink:href="#backStep" transform="translate(1300, 325)" />
+			<use xlink:href="#riser" transform="translate(1400, 350)"/>			
+		</g>
+
+	
+			<path id="motionPath" d="M 0, -25 
+								a 25, 30 180 0,1 150,100   
+								a 25, 30 180 0,1 100,75 
+								a 25, 30 180 0,1 100,75
+								a 25, 30 180 0,1 100,75
+								a 25, 20 180 0,1 150,100
+								
+								a 25, 30 180 0,0 -150,100
+								a 25, 30 180 0,0 -100,75
+								a 25, 30 180 0,0 -100,75
+								a 25, 30 180 0,0 -100,75
+								a 25, 20 180 0,0 -150,100
+								
+								a 25, 40 180 0,0 -150,-50
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 40 180 0,0 -100,-25
+								a 25, 30 180 0,0 -150,-50
+								
+								a 25, 40 180 0,1 150,-50
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 40 180 0,1 100,-25
+								a 25, 30 180 0,1 150,-50
+								
+								"/>
+
+	</defs>
+	
+	<!-- render graphics -->
+		<g transform="translate(1800, 150)">		
+
+			<!-- North to West -->
+			<use xlink:href="#landing" transform="translate(-100, -100)"/>
+			<use xlink:href="#backStairs" transform="scale(-1,1) translate(-150,-50)"/>
+			
+			<!-- East to North -->
+			<use xlink:href="#frontStairs" transform="translate(50, -25)" />
+			<use xlink:href="#landing" transform="translate(500, 325)"/>
+			
+			<!-- South to West -->
+			<use xlink:href="#landing" transform="translate(-1700, 325)"/>
+			<use xlink:href="#backStairs" transform="translate(-1550, 375)"/>
+			
+			<!-- South to East-->			
+			<use xlink:href="#frontStairs" transform="scale(-1,1) translate(-750, 400) "/>
+			<use xlink:href="#landing" transform="translate(-100, 750)"/>
+			
+			<circle id="ball" r="50" class="sphere" transform="translate(100, -25)"/>
+			
+			<animateMotion xlink:href="#ball"
+				dur="12s"
+				repeatCount="indefinite">
+				<mpath xlink:href="#motionPath" />
+			</animateMotion>
+		</g>
+</svg>
+</html>

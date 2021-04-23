@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)"
+   sodipodi:docname="stair_parts.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.12374369"
+     inkscape:cx="-1206.0807"
+     inkscape:cy="1529.7464"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1299"
+     inkscape:window-height="713"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:object-nodes="true"
+     inkscape:object-paths="false"
+     inkscape:snap-nodes="true"
+     inkscape:snap-intersection-paths="false"
+     inkscape:snap-smooth-nodes="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 123.26425,-21.900414 100,50.00001 v -12.50001 l -100,-50 z"
+       id="backRiser-9-6" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-3-1"
+       d="m 123.26424,-34.400424 100.00001,50.00001 -100.00001,49.99999 -100,-49.99999 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 23.26424,15.599586 100,49.99999 v -12.49999 l -100,-50 z"
+       id="backRiser-6-5" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-1-5"
+       d="M 23.26421,3.099576 123.26424,53.099586 23.26421,103.09959 -76.73577,53.099586 Z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -76.73577,53.099586 23.26421,103.09959 V 90.599586 l -99.99998,-50 z"
+       id="backRiser-2-4" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-9-7"
+       d="m -76.7358,40.599586 100.00001,50 -100.00001,49.999994 -99.99998,-49.999994 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -176.73578,90.599586 99.99998,50.000004 v -12.5 l -99.99998,-50.000004 z"
+       id="backRiser-3-6" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-19-5"
+       d="m -176.73581,78.099576 100.00001,50.000014 -100.00001,50 -99.99999,-50 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -276.7358,128.09959 99.99999,50 V 165.5996 l -99.99999,-50.00001 z"
+       id="backRiser-4-6" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-7-9"
+       d="M -276.7358,115.59959 -176.73578,165.5996 -276.7358,215.59958 -376.73581,165.5996 Z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -376.73581,165.5996 100.00001,49.99998 v -12.5 l -100.00001,-49.99999 z"
+       id="backRiser-8-3" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-4-7"
+       d="m -376.73581,153.09959 100.00001,49.99999 -100.00001,50.00001 -100.00001,-50.00001 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -476.73582,203.09958 100,49.99999 v -12.49999 l -100,-50 z"
+       id="backRiser-6-0-2" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-1-6-5"
+       d="m -476.73583,190.59957 100.00001,50.00001 -100.00001,49.99999 -100,-49.99999 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -576.73583,240.59958 100,49.99999 v -12.49999 l -100,-50 z"
+       id="backRiser-6-0-4" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-1-6-7"
+       d="m -576.73584,228.09957 100.00001,50.00001 -100.00001,49.99999 -100,-49.99999 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -676.73584,278.09958 99.99996,49.99999 v -12.49999 l -99.99996,-50 z"
+       id="backRiser-2-3-6" />
+    <path
+       style="fill:#ff8080;fill-opacity:1;stroke-width:0.920001"
+       id="landing-92-2"
+       d="m -726.73585,240.59959 -50,24.99999 -100,50.00001 -50,25 50,25 100,50 50,25 50.00001,-25 100.00001,-50 49.99998,-25 -49.99998,-25 -100.00001,-50.00001 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -576.73582,365.59959 -100,49.99999 v -12.49999 l 100,-50 z"
+       id="backRiser-6-0-0" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-1-6-78"
+       d="m -576.73581,353.09958 -100.00001,50.00001 100.00001,49.99999 100,-49.99999 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -376.7358,440.59959 -100,50 v -12.5 l 100,-50 z"
+       id="backRiser-1" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-3-6"
+       d="m -376.7358,428.09959 -100.00001,50.00001 100.00001,49.99999 100,-49.99999 z" />
+    <g
+       id="frontStep"
+       transform="translate(623.26425,115.59959)">
+      <path
+         style="fill:#00ffff;stroke-width:0.920001"
+         id="tread"
+         d="M 100,0 0,50 100,100 200,50 Z" />
+      <path
+         style="fill:#800080;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 200,75 100,125 V 100 L 200,50 Z"
+         id="riser" />
+    </g>
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread"
+       d="m -818.40028,-413.90571 -100.00001,50 100.00001,50 100,-50 z" />
+    <path
+       style="fill:#ff8080;fill-opacity:1;stroke-width:0.920001"
+       id="landing"
+       d="m 373.26425,-184.40042 -50,24.99999 -100,50.00001 -50,24.999996 50,25 100,49.9999998 50,25.0000002 50,-25.0000002 100,-49.9999998 50,-25 -50,-24.999996 -100,-50.00001 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -608.2576,-245.44155 -100,50 v -12.5 l 100,-50 z"
+       id="backRiser" />
+    <g
+       id="frontStep-3"
+       transform="translate(723.26425,190.59958)">
+      <path
+         style="fill:#00ffff;stroke-width:0.920001"
+         id="tread-6"
+         d="M 100,0 0,50 100,100 200,50 Z" />
+      <path
+         style="fill:#800080;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 200,75 100,125 V 100 L 200,50 Z"
+         id="riser-7" />
+    </g>
+    <g
+       id="frontStep-5"
+       transform="translate(523.26425,40.599586)">
+      <path
+         style="fill:#00ffff;stroke-width:0.920001"
+         id="tread-3"
+         d="M 100,0 0,50 100,100 200,50 Z" />
+      <path
+         style="fill:#800080;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 200,75 100,125 V 100 L 200,50 Z"
+         id="riser-5" />
+    </g>
+    <g
+       id="frontStep-6"
+       transform="translate(423.26425,-34.400424)">
+      <path
+         style="fill:#00ffff;stroke-width:0.920001"
+         id="tread-2"
+         d="M 100,0 0,50 100,100 200,50 Z" />
+      <path
+         style="fill:#800080;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 200,75 100,125 V 100 L 200,50 Z"
+         id="riser-9" />
+    </g>
+    <path
+       style="fill:#00ffff;stroke-width:0.920001"
+       id="tread-27"
+       d="m -121.64764,-454.45576 -100.00001,50 100.00001,50 99.999996,-50 z" />
+    <path
+       style="fill:#800080;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 523.26425,-34.400424 -100,50 V -9.4004242 l 100,-49.9999998 z"
+       id="riser-0" />
+    <path
+       style="fill:#ff8080;fill-opacity:1;stroke-width:0.920001"
+       id="landing-9"
+       d="m 973.26425,240.59959 -50,24.99999 -100,50.00001 -50,25 50,25 100,50 50,25 49.99995,-25 100.0001,-50 49.9999,-25 -49.9999,-25 -100.0001,-50.00001 z" />
+    <g
+       id="frontStep-5-3"
+       transform="matrix(-1,0,0,1,923.26425,390.59959)">
+      <path
+         style="fill:#00ffff;stroke-width:0.920001"
+         id="tread-3-6"
+         d="M 100,0 0,50 100,100 200,50 Z" />
+      <path
+         style="fill:#800080;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 200,75 100,125 V 100 L 200,50 Z"
+         id="riser-5-0" />
+    </g>
+    <path
+       style="fill:#00ffff;stroke-width:0.920001"
+       id="tread-3-6-2"
+       d="m -459.32079,-108.22862 100,50.000002 -100,50.0000007 -100.00001,-50.0000007 z" />
+    <path
+       style="fill:#800080;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 823.26425,390.59959 100,50 v -25 l -100,-50 z"
+       id="riser-5-0-6" />
+    <g
+       id="frontStep-5-3-1"
+       transform="matrix(-1,0,0,1,823.26425,465.59959)">
+      <path
+         style="fill:#00ffff;stroke-width:0.920001"
+         id="tread-3-6-8"
+         d="M 100,0 0,50 100,100 200,50 Z" />
+      <path
+         style="fill:#800080;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 200,75 100,125 V 100 L 200,50 Z"
+         id="riser-5-0-7" />
+    </g>
+    <g
+       id="frontStep-5-3-9"
+       transform="matrix(-1,0,0,1,723.26425,540.59959)">
+      <path
+         style="fill:#00ffff;stroke-width:0.920001"
+         id="tread-3-6-20"
+         d="M 100,0 0,50 100,100 200,50 Z" />
+      <path
+         style="fill:#800080;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 200,75 100,125 V 100 L 200,50 Z"
+         id="riser-5-0-2" />
+    </g>
+    <g
+       id="frontStep-5-3-3"
+       transform="matrix(-1,0,0,1,623.26425,615.59959)">
+      <path
+         style="fill:#00ffff;stroke-width:0.920001"
+         id="tread-3-6-7"
+         d="M 100,0 0,50 100,100 200,50 Z" />
+      <path
+         style="fill:#800080;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 200,75 100,125 V 100 L 200,50 Z"
+         id="riser-5-0-5" />
+    </g>
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-8"
+       d="m -429.42691,-345.81057 -100.00001,50 100.00001,50 100.00001,-50 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -276.7358,478.0996 -100,50.00001 V 515.5996 l 100,-50 z"
+       id="backRiser-9" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-3"
+       d="m -276.73579,465.59959 -100.00001,50.00001 100.00001,49.99999 100,-49.99999 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -176.73579,515.5996 -100,49.99999 V 553.0996 l 100,-50 z"
+       id="backRiser-6" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-1"
+       d="m -176.73578,503.09959 -100.00001,50.00001 100.00001,49.99999 100,-49.99999 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -76.73578,553.0996 -100,49.99999 V 590.5996 l 100,-50 z"
+       id="backRiser-2" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-9"
+       d="m -76.73577,540.5996 -100.00001,50 100.00001,49.99999 100,-49.99999 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 23.26423,590.5996 -100,50 v -12.5 l 100,-50 z"
+       id="backRiser-3" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-19"
+       d="m 23.26424,578.09959 -100.00001,50.00001 100.00001,49.99999 100,-49.99999 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 123.26424,628.0996 -100,49.99999 V 665.5996 l 100,-50 z"
+       id="backRiser-4" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-7"
+       d="m 123.26424,615.5996 -100.00001,50 100.00001,49.99999 100,-49.99999 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 223.26424,665.5996 -100,50 v -12.5 l 100,-50 z"
+       id="backRiser-8" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-4"
+       d="m 223.26425,653.0996 -100.00001,50 100.00001,50 100,-50 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 323.26425,703.0996 -100,50 v -12.5 l 100,-50 z"
+       id="backRiser-5" />
+    <path
+       style="fill:#ff8080;fill-opacity:1;stroke-width:0.920001"
+       id="landing-92"
+       d="m 373.26425,665.59961 -50,24.99999 -100,50.00001 -50,25 50,25 100,50 50,25 50,-25 100.00001,-50 49.99998,-25 -49.99998,-25 -100.00001,-50.00001 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -820.53666,32.158451 100,49.99999 v -12.49999 l -100,-50 z"
+       id="backRiser-6-0" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-1-6"
+       d="m -820.53667,19.658441 100.00001,50.00001 -100.00001,49.999989 -100,-49.999989 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -1094.874,-143.02384 99.99996,49.999987 v -12.499987 l -99.99996,-50 z"
+       id="backRiser-2-3" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 223.26425,-59.400424 100,50 v -12.5 l -100,-50 z"
+       id="backRiser-1-2" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-3-6-0"
+       d="m 223.26425,-71.900424 100.00001,50.00001 -100.00001,49.99999 -100,-49.99999 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -476.73581,403.09959 -100,49.99999 v -12.49999 l 100,-50 z"
+       id="backRiser-6-0-44" />
+    <path
+       style="fill:#000080;stroke-width:0.920001"
+       id="backTread-1-6-3"
+       d="m -476.7358,390.59958 -100.00001,50.00001 100.00001,49.99999 100,-49.99999 z" />
+  </g>
+</svg>
