@@ -1,0 +1,55 @@
+<html>
+
+<!-- http://blogs.msdn.com/b/davrous/archive/2011/07/29/html5-gaming-building-the-core-objects-amp-handling-collisions-with-easeljs.aspx 
+http://jlongster.com/Making-Sprite-based-Games-with-Canvas
+-->
+
+
+
+
+<head>
+<title>Test rasterizing an svg file</title>
+
+
+<script>
+
+//globals
+
+
+var ctx;
+
+
+
+// images need to be loaded BEFORE canvas can be drawn on
+img = new Image();
+img.src = "WSEN.svg";
+
+
+function rasterizeSVG()
+{
+	ctx = document.getElementById("canvas").getContext('2d');
+
+		
+			if (img != null){
+
+				ctx.drawImage(img, 50, 50);
+			}
+			else
+			{
+			alert("image is null");
+			}
+			
+	
+		
+}
+				
+</script>
+
+</head>
+<body onload="rasterizeSVG()">
+<br/>
+<canvas id="canvas" width="1300" height="600">
+    Your browser doesn't support the HTML5 element canvas.
+</canvas>
+</body>
+</html>

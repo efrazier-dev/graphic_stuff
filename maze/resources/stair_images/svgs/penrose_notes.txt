@@ -1,0 +1,17 @@
+550x 885y
+650x 960y
+750  1035
+850  1110
+
+
+riser = 25px
+w 200 h 100
+
+right side
++100   +75
+
+left side
+-100  +25
+
+
+http://frontendbabel.info/articles/svg-grouping-and-reusing-elements/

@@ -1,0 +1,510 @@
+<!DOCTYPE HTML>
+<html>
+
+<style>
+.riser
+{
+fill: black;
+stroke: black;
+stroke-width:2;
+}
+
+.tread
+{
+fill: #66CCFF;
+stroke: black;
+stroke-width:2;
+}
+
+.bkgrnd {
+background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImcxODIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNFM0E4MjAiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2cxODIpIiAvPgo8L3N2Zz4=)
+}
+
+</style>
+
+<script src="DFSGenerator.js"></script>
+<script type="text/javascript">
+
+	// global vars
+	var svgObjectHorizOffset = 700;
+	var svgObjectVertOffset = 275;
+	var columnNbr = 5;
+	var rowNbr = 5;
+	
+	var horizMargin = 600;
+	var vertMargin = 200;
+	
+	var totalWidth = 0;
+	var totalHeight = 0;
+	
+	var playerX = 20; // Initial player horizontal location.
+	var playerY = 20; // Initial player vertical location.	
+	
+/*	
+
+a	c	e
+b	d	f
+0	0	1
+
+Translate(tx, ty) can be written as the matrix:
+
+1  0  tx
+0  1  ty
+0  0  1
+Scale(sx, sy) can be written as the matrix:
+
+sx  0  0
+0  sy  0
+0   0  1
+*/
+
+	function init()
+	{
+		// set viewPort
+		var svgRootElement = document.getElementById("rt");
+		svgRootElement.setAttribute("width", window.innerWidth - 20);
+		svgRootElement.setAttribute("height", window.innerHeight - 20);
+		
+
+
+		// build and render stair maze
+		setMazeSize(rowNbr, columnNbr);
+		generate();
+		renderMaze();
+		
+		//determine where to initially draw player
+		var cellRow = getCellRow(0);
+		var cellColumn = getCellColumn(0);
+		
+		// matrix of stairGroup0 use element
+		var sg0matrix = stairGroup0.getCTM();
+		
+		var sg0href = stairGroup0.getAttribute("href");
+		sg0href = sg0href.substring(1);
+		
+		// used element: WestSouthNorth, East, etc
+		var usedElement = document.getElementById(sg0href);
+		
+		// find first 'landing' matrix
+		var children = usedElement.children;
+
+		for (i = 0; i < children.length; i++)
+		{
+
+			if (children[i].href.baseVal = '#landing')
+			{
+				// landing element in defs
+				//var landingElement = document.getElementById(children[i].href.baseVal.substring(1));
+
+				
+				// matrix of landing use element
+				//var landingMatrix = landingElement.getCTM();
+				var landingMatrix = children[i].transform.baseVal[0].matrix;
+				
+				var startMatrix = sg0matrix.multiply(landingMatrix, sg0matrix);
+				//var startMatrix = sg0matrix;
+
+				//startMatrix.a = 1;
+				//startMatrix.d = 1;
+
+				
+				//startMatrix.e = startMatrix.e + 600;
+				//startMatrix.f = startMatrix.f + 200;
+
+				break;
+				}
+		}
+
+		var transform = svgRootElement.createSVGTransformFromMatrix(startMatrix);
+		guy.transform.baseVal.appendItem(transform);
+		
+		//guy.setAttribute('transform', 'translate(' + 600 + ',' + 200 + ')');
+
+		/////guy.setAttribute('x', 67 + 600 + svgObjectHorizOffset); //was 600
+		/////guy.setAttribute('y', 22 + 200 + svgObjectVertOffset);   //was 50	
+		
+		
+		
+		/////guy.setAttribute('x', cellColumn * svgObjectHorizOffset + 600); //was 600
+		////guy.setAttribute('y', cellRow * svgObjectVertOffset + 200);   //was 50
+		
+		svgRootElement.appendChild(guy);
+		
+		
+		
+		// set viewBox
+		totalWidth = columnNbr * svgObjectHorizOffset + horizMargin; //was 600
+		totalHeight = rowNbr * svgObjectVertOffset + vertMargin;  //was 50
+		svgRootElement.setAttribute("viewBox", "0 0 " + totalWidth + " " + totalHeight);
+		svgRootElement.setAttribute("preserveAspectRatio", "xMinYMin meet");
+		
+		
+		// Add keyboard listener.
+        window.addEventListener('keydown', whatKey, true);
+	}
+	
+      // Get key press
+      function whatKey(evt) 
+	  {
+		var stairGrp = document.getElementById("stairGroup0");
+		stairGrp.getAttribute("href");
+		
+		console.log(stairGrp.getAttribute("href"));
+					
+        switch (evt.keyCode) 
+		{
+
+			// 'D' move upper right
+			case 68:
+				playerX = playerX + 20;
+				if (playerX > totalWidth) 
+				{
+					playerX = 0;
+				}
+				guy.setAttribute("x", playerX);
+				break;
+							
+			// 'S' move upper left
+			case 83:
+				playerY = playerY + 20;
+				if (playerY > totalHeight) 
+				{
+					playerY = 0;
+				}
+				guy.setAttribute("y", playerY);
+				
+				////////var svgRootElement = document.getElementById("rt");
+				////////var playerElement = document.getElementById("playerGrp");
+
+				break;
+				
+			// 'Z' move lower left
+			case 90:
+				playerY = playerY + 20;
+				if (playerY > totalHeight) 
+				{
+					playerY = 0;
+				}
+				guy.setAttribute("y", playerY);
+				
+				////////var svgRootElement = document.getElementById("rt");
+				////////var playerElement = document.getElementById("playerGrp");
+
+				break;
+				
+			// 'X' move lower right
+			case 88:
+				playerY = playerY + 20;
+				if (playerY > totalHeight) 
+				{
+					playerY = 0;
+				}
+				guy.setAttribute("y", playerY);
+				
+				////////var svgRootElement = document.getElementById("rt");
+				////////var playerElement = document.getElementById("playerGrp");
+
+				break;
+				
+		}
+      }
+	
+	// render the maze
+	function renderMaze()
+	{
+		
+		var totalCells = getTotalCells();
+		var cellRow = 0;
+		var cellColumn = 0;
+		var cellValue = 0;
+		
+		var svgRootElement = document.getElementById("rt");
+		
+				
+		for(var currCell = 0; currCell < totalCells; currCell++)
+		{							
+			//get cell value containing number of knocked down walls in cell
+			cellValue = getCellValue(currCell);
+			
+			// set stair element ref based on cell value
+			switch(cellValue) 
+			{
+				case NORTH_CELL:
+					stairElementRef = "#North";
+					break;
+				case EAST_CELL:
+					stairElementRef = "#East";
+					break;
+				case EAST_NORTH_CELL:
+					stairElementRef = "#EastNorth";
+					break;
+				case SOUTH_CELL:
+					stairElementRef = "#South";
+					break;
+				case SOUTH_NORTH_CELL:
+					stairElementRef = "#SouthNorth";
+					break;
+				case SOUTH_EAST_CELL:
+					stairElementRef = "#SouthEast";
+					break;
+				case SOUTH_EAST_NORTH_CELL:
+					stairElementRef = "#SouthEastNorth";
+					break;
+				case WEST_CELL:
+					stairElementRef = "#West";
+					break;
+				case WEST_NORTH_CELL:
+					stairElementRef = "#WestNorth";
+					break;
+				// override with WestSouthEastNorth
+				case WEST_EAST_CELL:
+					forceCell(currCell);
+					stairElementRef = "#WestSouthEastNorth";
+					break;
+				case WEST_EAST_NORTH_CELL:
+					stairElementRef = "#WestEastNorth";
+					break;
+				case WEST_SOUTH_CELL:
+					stairElementRef = "#WestSouth";
+					break;
+				case WEST_SOUTH_NORTH_CELL:
+					stairElementRef = "#WestSouthNorth";
+					break;
+				case WEST_SOUTH_EAST_CELL:
+					stairElementRef = "#WestSouthEast";
+					break;
+				case WEST_SOUTH_EAST_NORTH_CELL:
+					stairElementRef = "#WestSouthEastNorth";
+					break;
+				default:
+					stairElementRef = "#WestSouthEastNorth";
+			}
+
+			//determine where to draw graphic
+			cellRow = getCellRow(currCell);
+			cellColumn = getCellColumn(currCell);
+
+			var useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+			useElement.setAttributeNS('http://www.w3.org/1999/xlink', 'href', stairElementRef);
+			
+			var xOff = cellColumn * svgObjectHorizOffset + horizMargin;
+			var yOff = cellRow * svgObjectVertOffset + vertMargin;
+			useElement.setAttribute('transform', 'translate(' + xOff + ',' + yOff + ')');
+			
+			//////////useElement.setAttribute('x', cellColumn * svgObjectHorizOffset + 600); //was 600
+			//////////useElement.setAttribute('y', cellRow * svgObjectVertOffset + 200);   //was 50
+			
+			useElement.setAttribute('id', 'stairGroup' + currCell);
+			
+ 			/////////////useElement.setAttribute('filter', 'url(#dropShadow)');
+			svgRootElement.appendChild(useElement);
+
+		} 
+	}
+
+</script>
+
+<body onload="init();" class="bkgrnd">
+
+
+<svg id="rt">
+
+	<filter id="dropShadow" x="0" y="0" width="200%" height="200%">
+		<feOffset result = "offOut" in = "SourceAlpha" dx = "200" dy = "200"/>
+        <feGaussianBlur result = "blurOut" in = "offOut" stdDeviation = "10"/>
+        <feBlend in = "SourceGraphic" in2 = "blurOut" mode = "normal"/>
+	</filter>
+	
+	<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+		<stop offset="0%" style="stop-color:rgb(235, 235, 224);stop-opacity:1" />
+		<stop offset="100%" style="stop-color:rgb(153, 0, 153);stop-opacity:1" />
+	</linearGradient>
+
+	<!-- define graphics -->
+	<defs>
+
+		<!-- staircase primitives -->
+		<path id="tread" d="M100,0 l-100,50 l100,50 l100,-50 Z" class="tread" />
+		<path id="riser" d="M200,75 l-100,50 l0,-25 l100,-50 Z" class="riser" />			
+		<path id="landing" d="M200,0 l-200,100 l200,100 l200,-100 Z" class="tread" />
+		
+		<!--DELETE THIS ??? <ellipse id="player" rx="25" ry="95" fill="url(#grad1)" />-->
+
+		<g id="frontStep">
+			<use xlink:href="#tread" />
+			<use xlink:href="#riser" />
+		</g>
+
+		<g id="frontStairs">		
+			<use xlink:href="#riser" transform="scale(0.5)" />
+			<use xlink:href="#frontStep" transform="translate(50, 37.5) scale(0.5)" />
+			<use xlink:href="#frontStep" transform="translate(100, 75) scale(0.5)" />
+		</g>
+		
+		<g id="backStep">
+			<use xlink:href="#riser" />
+			<use xlink:href="#tread" transform="translate(100,50)"/>
+		</g>		
+		
+		<g id="backStairs">
+			<use xlink:href="#backStep" transform="scale(0.5)" />
+			<use xlink:href="#backStep" transform="translate(50, 12.5) scale(0.5)" />
+			<use xlink:href="#backStep" transform="translate(100, 25) scale(0.5)" />
+			<use xlink:href="#backStep" transform="translate(150, 37.5) scale(0.5)" />
+			<use xlink:href="#backStep" transform="translate(200, 50) scale(0.5)" />
+			<use xlink:href="#backStep" transform="translate(250, 62.5) scale(0.5)" />
+			<use xlink:href="#backStep" transform="translate(300, 75) scale(0.5)" />
+			<use xlink:href="#backStep" transform="translate(350, 87.5) scale(0.5)" />
+			<use xlink:href="#riser" transform="translate(400, 100) scale(0.5)" />
+		</g>
+
+		<g id="East">
+			<use xlink:href="#landing" transform="translate(150,87.5) scale(0.5)"/>
+		</g>
+
+		<g id="South">
+			<use xlink:href="#landing" transform="translate(-50,225) scale(0.5)"/>
+		</g>
+		
+
+		<g id="West">
+			<use xlink:href="#landing" transform="translate(-550,87.5) scale(0.5)"/>
+		</g>		
+
+		<g id="SouthEast">
+			<use xlink:href="#landing" transform="translate(150,87.5) scale(0.5)"/>
+			<use xlink:href="#frontStairs" transform="translate(250, 112.5) scale(-1, 1)"/>
+			<use xlink:href="#landing" transform="translate(-50,225) scale(0.5)"/>
+		</g>
+
+		<g id="WestSouth">
+			<use xlink:href="#landing" transform="translate(-550,87.5) scale(0.5)"/>
+			<use xlink:href="#backStairs" transform="translate(-450, 100)"/>
+			<use xlink:href="#landing" transform="translate(-50,225) scale(0.5)"/>
+		</g>
+		
+		<g id="North">
+			<use xlink:href="#landing" transform="translate(-50,-50) scale(0.5)"/>
+		</g>
+		
+		<g id="EastNorth">
+			<use xlink:href="#landing" transform="translate(-50,-50) scale(0.5)"/>
+			<use xlink:href="#frontStairs"/>
+			<use xlink:href="#landing" transform="translate(150,87.5) scale(0.5)"/>
+		</g>
+
+		<g id="WestNorth">		
+			<use xlink:href="#landing" transform="translate(-50,-50) scale(0.5)"/>
+			<use xlink:href="#backStairs" transform="translate(100, -12.5) scale(-1, 1)"/>
+			<use xlink:href="#landing" transform="translate(-550,87.5) scale(0.5)"/>
+		</g>
+		
+		<g id="WestEast">					
+			<!--East to South -->
+			<use xlink:href="#landing" transform="translate(150,87.5) scale(0.5)"/>
+			<use xlink:href="#frontStairs" transform="translate(250, 112.5) scale(-1, 1)"/>
+			
+			<!--West to South-->		
+			<use xlink:href="#landing" transform="translate(-550,87.5) scale(0.5)"/>
+			<use xlink:href="#backStairs" transform="translate(-450, 100)"/>
+			<use xlink:href="#tread" transform="translate(0,225) scale(0.5)"/>
+		</g>
+		
+		<g id="SouthNorth">
+			<!--North to East -->
+			<use xlink:href="#landing" transform="translate(-50,-50) scale(0.5)"/>
+			<use xlink:href="#frontStairs"/>
+			
+			<!--East to South -->
+			<use xlink:href="#tread" transform="translate(150,112.5) scale(0.5)"/>
+			<use xlink:href="#frontStairs" transform="translate(250, 112.5) scale(-1, 1)"/>
+
+			<use xlink:href="#landing" transform="translate(-50,225) scale(0.5)"/>
+
+		</g>
+		
+		<g id="SouthEastNorth">
+			<!--North to East -->
+			<use xlink:href="#landing" transform="translate(-50,-50) scale(0.5)"/>
+			<use xlink:href="#frontStairs"/>
+			
+			<!--East to South -->
+			<use xlink:href="#landing" transform="translate(150,87.5) scale(0.5)"/>
+			<use xlink:href="#frontStairs" transform="translate(250, 112.5) scale(-1, 1)"/>
+
+			<use xlink:href="#landing" transform="translate(-50,225) scale(0.5)"/>
+
+		</g>
+
+		<g id="WestSouthEast">
+			<!--East to South -->
+			<use xlink:href="#landing" transform="translate(150,87.5) scale(0.5)"/>
+			<use xlink:href="#frontStairs" transform="translate(250, 112.5) scale(-1, 1)"/>
+		
+			<use xlink:href="#landing" transform="translate(-550,87.5) scale(0.5)"/>
+			
+			<!--West to South-->
+			<use xlink:href="#backStairs" transform="translate(-450, 100)"/>
+			<use xlink:href="#landing" transform="translate(-50,225) scale(0.5)"/>
+		</g>
+
+		<g id="WestEastNorth">		
+			<!--North to East -->
+			<use xlink:href="#landing" transform="translate(-50,-50) scale(0.5)"/>
+			<use xlink:href="#frontStairs"/>
+
+			<!--North to West -->
+			<use xlink:href="#backStairs" transform="translate(100, -12.5) scale(-1, 1)"/>
+			<use xlink:href="#landing" transform="translate(-550,87.5) scale(0.5)"/>
+		</g>
+
+		<g id="WestSouthNorth">
+			<!--North to West -->
+			<use xlink:href="#backStairs" transform="translate(100, -12.5) scale(-1, 1)"/>
+			<use xlink:href="#landing" transform="translate(-550,87.5) scale(0.5)"/>
+			
+			<!--West to South-->
+			<use xlink:href="#backStairs" transform="translate(-450, 100)"/>
+			<use xlink:href="#landing" transform="translate(-50,225) scale(0.5)"/>
+		</g>				
+
+		<g id="WestSouthEastNorth">		
+			<!--North to East -->
+			<use xlink:href="#landing" transform="translate(-50,-50) scale(0.5)"/>
+			<use xlink:href="#frontStairs"/>
+			
+			<!--East to South -->
+			<use xlink:href="#landing" transform="translate(150,87.5) scale(0.5)"/>
+			<use xlink:href="#frontStairs" transform="translate(250, 112.5) scale(-1, 1)"/>
+
+			<!--North to West -->
+			<use xlink:href="#backStairs" transform="translate(100, -12.5) scale(-1, 1)"/>
+			<use xlink:href="#landing" transform="translate(-550,87.5) scale(0.5)"/>
+			
+			<!--West to South-->
+			<use xlink:href="#backStairs" transform="translate(-450, 100)"/>
+			<use xlink:href="#landing" transform="translate(-50,225) scale(0.5)"/>
+		</g>
+		
+
+	</defs>
+	
+
+					<rect id="guy" width="100" height="100" fill="red" />
+					
+					<rect id="GreenGuy" width="100" height="100" fill="green" transform="translate(600, 200)" />
+	<circle id="cap" r="20" stroke="#330d00" stroke-width="0.5" fill="#661900" transform="translate(600, 475)"/>
+	
+	<!-- render graphics -->
+	<!--<use xlink:href="#SouthMirror" x="600" y="400" transform="scale(0.5)"/>
+	<use xlink:href="#South" x="600" y="200" transform="scale(0.5)"/>
+	<use xlink:href="#West" x="600" y="200" transform="scale(0.5)"/>
+	<use xlink:href="#East" x="600" y="200" transform="scale(0.5)"/>-->
+	
+
+</svg>
+
+
+
+</body>
+</html>

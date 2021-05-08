@@ -1,0 +1,66 @@
+<html>
+
+<style>
+.riser
+{
+fill: black;
+stroke: black;
+stroke-width:2;
+}
+
+.step
+{
+fill: #66CCFF;
+stroke: black;
+stroke-width:2;
+}
+
+
+
+</style>
+
+<body>
+
+
+<svg width="1200" height="600" >
+
+	<def>
+		<path id="step" d="M100,0 l-100,50 l100,50 l100,-50 Z" class="step" />
+		<path id="riser" d="M200,75 l-100,50 l0,-25 l100,-50 Z" class="riser" />			
+		<path id="landing" d="M200,0 l-200,100 l200,100 l200,-100 Z" class="step" />
+
+		<g id="frontStep">
+			<use xlink:href="#step" />
+			<use xlink:href="#riser" />
+		</g>
+
+		<g id="frontStairs">
+			<svg>
+				<use xlink:href="#landing" transform="translate(-50, -50) scale(0.5)" />
+				<use xlink:href="#riser" transform="scale(0.5)" />
+			</svg>
+			<svg x="50" y="37.5">
+				<use xlink:href="#frontStep" transform="scale(0.5)" />
+			</svg>
+			<svg x="100" y="75">
+				<use xlink:href="#frontStep" transform="scale(0.5)" />
+			</svg>
+			<svg x="150" y="112.5">
+				<use xlink:href="#frontStep" transform="scale(0.5)" />
+			</svg>
+		</g>
+	
+	<g id="frontStairsRightLeft">
+		<use xlink:href="#frontStairs"/>	
+		<use xlink:href="#frontStairs" transform="translate(300, 150) scale(-1, 1)"/>
+	</g>
+	
+	
+	</def>
+
+			<use xlink:href="#frontStairsRightLeft" x="600" y="200" />	
+
+</svg>
+
+</body>
+</html>

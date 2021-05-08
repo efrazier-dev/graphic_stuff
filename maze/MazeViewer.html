@@ -1,0 +1,89 @@
+<html>
+
+<!-- http://blogs.msdn.com/b/davrous/archive/2011/07/29/html5-gaming-building-the-core-objects-amp-handling-collisions-with-easeljs.aspx 
+http://jlongster.com/Making-Sprite-based-Games-with-Canvas
+-->
+
+
+
+
+<head>
+<title>Maze Viewer</title>
+
+<script src="DFSGenerator.js"></script>
+<script src="MazeViewer.js"></script>
+<script>
+
+//globals
+
+var uniqNbrImages = 16;
+var imgArr = new Array(uniqNbrImages);
+var ctx;
+
+// image dimensions in px
+var cellImgWidth = 100;
+var cellImgHeight = 100;
+
+var resourceType = "bmp";
+
+
+// images need to be loaded BEFORE canvas can be drawn on
+imgArr[CLOSED_CELL] = new Image();
+imgArr[CLOSED_CELL].src = "resources/cell_images/____." + resourceType;
+
+imgArr[NORTH_CELL] = new Image();
+imgArr[NORTH_CELL].src = "resources/cell_images/___N." + resourceType;
+
+imgArr[EAST_CELL] = new Image();
+imgArr[EAST_CELL].src = "resources/cell_images/__E_." + resourceType;
+
+imgArr[EAST_NORTH_CELL] = new Image();
+imgArr[EAST_NORTH_CELL].src = "resources/cell_images/__EN." + resourceType;
+
+imgArr[SOUTH_CELL] = new Image();
+imgArr[SOUTH_CELL].src = "resources/cell_images/_S__." + resourceType;
+
+imgArr[SOUTH_NORTH_CELL] = new Image();
+imgArr[SOUTH_NORTH_CELL].src = "resources/cell_images/_S_N." + resourceType;
+
+imgArr[SOUTH_EAST_CELL] = new Image();
+imgArr[SOUTH_EAST_CELL].src = "resources/cell_images/_SE_." + resourceType;
+
+imgArr[SOUTH_EAST_NORTH_CELL] = new Image();
+imgArr[SOUTH_EAST_NORTH_CELL].src = "resources/cell_images/_SEN." + resourceType;
+
+imgArr[WEST_CELL] = new Image();
+imgArr[WEST_CELL].src = "resources/cell_images/W___." + resourceType;
+
+imgArr[WEST_NORTH_CELL] = new Image();
+imgArr[WEST_NORTH_CELL].src = "resources/cell_images/W__N." + resourceType;
+
+imgArr[WEST_EAST_CELL] = new Image();
+imgArr[WEST_EAST_CELL].src = "resources/cell_images/W_E_." + resourceType;
+
+imgArr[WEST_EAST_NORTH_CELL] = new Image();
+imgArr[WEST_EAST_NORTH_CELL].src = "resources/cell_images/W_EN." + resourceType;
+
+imgArr[WEST_SOUTH_CELL] = new Image();
+imgArr[WEST_SOUTH_CELL].src = "resources/cell_images/WS__." + resourceType;
+
+imgArr[WEST_SOUTH_NORTH_CELL] = new Image();
+imgArr[WEST_SOUTH_NORTH_CELL].src = "resources/cell_images/WS_N." + resourceType;
+
+imgArr[WEST_SOUTH_EAST_CELL] = new Image();
+imgArr[WEST_SOUTH_EAST_CELL].src = "resources/cell_images/WSE_." + resourceType;
+
+imgArr[WEST_SOUTH_EAST_NORTH_CELL] = new Image();
+imgArr[WEST_SOUTH_EAST_NORTH_CELL].src = "resources/cell_images/WSEN." + resourceType;
+				
+</script>
+
+</head>
+<!-- background="http://www.animateit.net/data/media/april2014/blackwater.gif" -->
+<body onLoad="setMazeSize(20, 40);generate();renderMaze();">
+<br/>
+<canvas id="canvas" width="2000" height="1000">
+    Your browser doesn't support the HTML5 element canvas.
+</canvas>
+</body>
+</html>
