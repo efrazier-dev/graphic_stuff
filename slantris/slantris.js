@@ -274,8 +274,9 @@ var move_down = false;
 		
         switch (evt.keyCode) 
 		{
-			// 'A' move left
+			// 'A' or 'left arrow' move left
 			case 65:
+			case 37:
 				// move piece left
 				piece.coordinates[0][1] = piece.coordinates[0][1] - 1;
 				piece.coordinates[1][1] = piece.coordinates[1][1] - 1;
@@ -285,8 +286,9 @@ var move_down = false;
 				move_down = false;
 				break;
 				
-			// 'D' move right
+			// 'D' or 'right arrow' move right
 			case 68:
+			case 39:
 				// move piece right
 				piece.coordinates[0][1] = piece.coordinates[0][1] + 1;
 				piece.coordinates[1][1] = piece.coordinates[1][1] + 1;
@@ -296,8 +298,9 @@ var move_down = false;
 				move_down = false;
 				break;
 				
-			// 'W' rotate clockwise
+			// 'W' or 'up arrow' rotate clockwise
 			case 87:
+			case 38:
 				update_curr_state(piece);
 					
 				switch (piece.type)
@@ -516,8 +519,9 @@ var move_down = false;
 				}
 				break;
 
-			// 'S' move down
+			// 'S' or 'down arrow' move down
 			case 83:
+			case 40:
 				// move piece down
 				piece.coordinates[0][0] = piece.coordinates[0][0] + 1;
 				piece.coordinates[1][0] = piece.coordinates[1][0] + 1;
