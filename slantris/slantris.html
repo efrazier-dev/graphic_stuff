@@ -1,0 +1,99 @@
+<html>
+<head>
+<style>
+
+.bkgnd 
+{
+    background: black
+}
+
+.space_empty
+{
+fill: #ff5c33;
+stroke: #ff5c33;
+stroke-width:3;
+}
+
+.space_filled
+{
+fill: red;
+stroke: black;
+stroke-width:3;
+}
+
+.widgets
+{
+fill: #ff5c33;
+stroke: black;
+stroke-width:3;
+}
+
+.stats_labels
+{
+fill: #ff5c33;
+font-family: 'Arial';
+font-size: 14px;
+font-style: bold;
+
+// prevent highlighting text
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+pointer-events: none;
+}
+
+.title_label
+{
+fill: #ff5c33;
+font-family: 'Arial';
+font-size: 24px;
+font-style: bold;
+
+// prevent highlighting text
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+pointer-events: none;
+}
+
+</style>
+
+<script src="slantris.js"></script>
+
+</head>
+
+<body onload="init()">
+<svg id="rt" width="500" height="500" class="bkgnd">
+
+  <g transform="skewX(15) translate(0 20)">
+  		<text class="title_label">SLANT&#x042F;IS</text>
+	<g id="grp" transform="translate(0 20)">
+	
+
+
+			
+		<g id="leftButton" onclick="attemptMoveLeft()" touchend="attemptMoveLeft()">
+			<path d="M 0, 410 l -50, 25 l 50, 25 z" class="widgets" />		
+		</g>
+
+		<g id="rightButton" onclick="attemptMoveRight()" touchend="attemptMoveRight()">
+			<path d="M 200, 410 l 50, 25 l -50, 25 z" class="widgets" />
+		</g>		
+		
+		<g id="rotateButton" onclick="attemptRotate()" touchend="attemptRotate()">
+			<path d="M 100, 410 l 25, 25 l -25, 25 l -25, -25 z" class="widgets" />
+		</g>
+		
+		<g id="downButton" onclick="attemptMoveDown()" touchend="attemptMoveDown()">
+			<path d="M 75, 480 l 50, 0 l -25, 50 z" class="widgets" />
+		</g>
+
+	</g>
+	</g>
+</svg>
+</body>
+</html>
